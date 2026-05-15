@@ -1,0 +1,202 @@
+.contrate-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 0;
+    background-color: hsl(240 10% 3.9%);
+    max-width: 1352px;
+    margin: 0 auto;
+}
+
+.subtitulo3 {
+    font-size: 1rem;
+    color: #a1a1aa;
+    width: 768px;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+.coluna2 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    display: grid;
+}
+
+.container-de-desenvolvimento {
+    align-items: center;
+    min-height: 338px;
+}
+
+.texts-de-desenvolvimento h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 0.375rem;
+    width: initial;
+    letter-spacing: -0.6px;
+    line-height: 1.5rem;
+}
+
+.texts-de-desenvolvimento p {
+    font-size: 0.875rem;
+    color: #a1a1aa;
+    margin-top: 0.375rem;
+    width: 379px;
+    height: 40px;
+    line-height: 1.25rem;
+}
+
+.flex-de-desenvolvimento {
+    padding-top: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.0625rem;
+}
+
+.flex-de-desenvolvimento-bottom {
+    padding-top: 0rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.container-de-svg {
+    margin-bottom: 1rem;
+}
+
+.ul-centralizar {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.ul-centralizar li {
+    display: flex;
+    align-items: center;
+    margin-top: 0.625rem;
+    font-size: 0.875rem;
+}
+
+.ul-centralizar li svg {
+    color: hsl(263.4 70% 50.4%);
+    margin-right: 0.5rem;
+}
+
+.border-container {
+    border: 0.8px solid hsl(240 3.7% 15.9%);
+    border-radius: 0.5rem;
+    height: 100%;
+}
+
+.desenvolvimento-frontend-todo {
+    background-color: hsl(240 10% 3.9%);
+    align-items: center;
+    height: 293px;
+}
+
+.disponibilidade-container {
+    margin-top: 4rem;
+    text-align: center;
+    background-color: hsl(263.4 70% 50.4%);
+    border-radius: 0.5rem;
+    height: 100%;
+    width: 100%;
+}
+
+.disponibilidade-border {
+    border: 0.8px solid hsl(240 3.7% 15.9%);
+    border-radius: 0.5rem;
+}
+
+.disponibildade-svg-e-h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.disponibilidade-padding {
+    padding: 2rem 2rem 2rem 2rem;
+}
+
+.svg-disponibilidade {
+    margin-right: 0.75rem;
+}
+
+.disponibildade-svg-e-h2 h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2rem;
+}
+
+.disponibilidade-p {
+    font-size: 1rem;
+    color: #f9fafb;
+    text-align: center;
+    line-height: 1.5rem;
+    width: 672px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1.5rem auto;
+}
+
+.disponibilidade-li {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.25rem 0.75rem;
+    background-color: #27272a;
+    color: #fafafa;
+    transition-property: color, background-color, border-color;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+}
+
+.disponibilidade-li:hover {
+    background-color: rgb(48, 12, 48);
+}
+
+.disponibilidade-li:focus {
+    outline: none;
+}
+
+.disponibilidade-li:focus-visible {
+    box-shadow:
+        0 0 0 2px var(--ring),
+        0 0 0 4px var(--ring-offset);
+}
+
+.disponibilidade-contato {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    font-size: 0.875rem;
+    font-weight: 500;
+    height: 2.75rem;
+    padding-inline: 2rem;
+    margin-top: 2rem;
+    border-radius: 0.375rem;
+    background-color: #27272a;
+    color: #fafafa;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+}
+
+.disponibilidade-contato:hover {
+    background-color: rgba(16, 9, 119, 0.655);
+}
+
+.disponibilidade-contato:focus-visible {
+    outline: none;
+}
+
+.disponibilidade-contato a {
+    color: #fafafa;
+    text-decoration: none;
+}
