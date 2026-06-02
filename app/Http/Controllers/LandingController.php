@@ -26,4 +26,9 @@ class LandingController extends Controller
             'contactInfo' => $contactInfo
         ]);
     }
+
+    public function index2() {
+        $contactInfo = Contactinfo::findOrFail(1);
+        return response()->json(['contactInfo' => $contactInfo], 200);
+    }
 }
