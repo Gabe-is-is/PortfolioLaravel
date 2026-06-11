@@ -7,10 +7,12 @@ use Illuminate\Console\Attributes\Description;
 use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 
-#[Signature('app:create-user {email} {name} {password}')]
-#[Description('Create an admin user')]
 class CreateUser extends Command
 {
+    protected $signature = 'app:create-user {email} {name} {password}';
+
+    protected $description = 'Create a user';
+
     /**
      * Execute the console command.
      */
