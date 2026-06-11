@@ -1,4 +1,4 @@
-name: Deploy Laravel via FTP
+name: Deploy Laravel via FTPS
 
 on:
   push:
@@ -59,9 +59,17 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y lftp
 
-      - name: Enviar ZIP via FTP
+      - name: Enviar ZIP via FTPS
         run: |
-          lftp -u "${{ secrets.FTP_USER }},${{ secrets.FTP_PASS }}" "${{ secrets.FTP_HOST }}" <<EOF
+          lftp <<EOF
+          set ftp:ssl-force true
+          set ftp:ssl-protect-data true
+          set ssl:verify-certificate no
+
+          open -u "${{ secrets.FTP_USER }}","${{ secrets.FTP_PASS }}" \
+            -p 21 \
+            ${{ secrets.FTP_HOST }}
+
           mkdir -p deploy
           cd deploy
           put deploy.zip
