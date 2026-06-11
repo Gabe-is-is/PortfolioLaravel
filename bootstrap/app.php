@@ -17,5 +17,4 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->preventRequestForgery();
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        //
     })->create();
