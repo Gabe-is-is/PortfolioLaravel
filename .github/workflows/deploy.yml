@@ -17,7 +17,7 @@ jobs:
       - name: Configurar PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.3"
+          php-version: "8.2"
           extensions: mbstring, xml, ctype, json, bcmath, pdo_mysql
           coverage: none
 
@@ -54,16 +54,19 @@ jobs:
             -x "storage/logs/*" \
             -x ".env"
 
+      - name: Instalar lftp
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+
       - name: Enviar ZIP via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          local-dir: ./
-          server-dir: /deploy/
-          include: |
-            deploy.zip
+        run: |
+          lftp -u "${{ secrets.FTP_USER }},${{ secrets.FTP_PASS }}" "${{ secrets.FTP_HOST }}" <<EOF
+          mkdir -p deploy
+          cd deploy
+          put deploy.zip
+          bye
+          EOF
 
       - name: Executar deploy via SSH
         uses: appleboy/ssh-action@v1.2.0
@@ -74,9 +77,6 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd /var/www/site
-
-            rm -rf vendor_old
-            rm -rf public/build_old
 
             unzip -o /home/usuario/deploy/deploy.zip -d .
 
