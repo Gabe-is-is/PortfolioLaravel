@@ -70,9 +70,8 @@ jobs:
             -p 21 \
             ${{ secrets.FTP_HOST }}
 
-          mkdir -p deploy
-          cd deploy
           put deploy.zip
+
           bye
           EOF
 
@@ -84,9 +83,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /var/www/site
+            cd ~
 
-            unzip -o /home/usuario/deploy/deploy.zip -d .
+            unzip -o deploy.zip
 
             php artisan migrate --force
 
@@ -98,4 +97,4 @@ jobs:
             php artisan route:cache
             php artisan view:cache
 
-            rm -f /home/usuario/deploy/deploy.zip
+            rm -f deploy.zip
