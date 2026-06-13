@@ -68,7 +68,10 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd ~
-            find . -mindepth 1 ! -name '.env' -exec rm -rf {} +
+            find . -mindepth 1 -maxdepth 1 \
+              ! -name '.env' \
+              ! -name '.ssh' \
+              -exec rm -rf -- {} +
 
       - name: Enviar ZIP via FTPS
         run: |
